@@ -8,9 +8,57 @@ import {
   Dimensions,
 } from 'react-native';
 import React, {Component, createRef} from 'react';
-import {DragSortableView} from 'react-native-drag-sort';
+import {
+  DragSortableView,
+  AutoDragSortableView,
+  AnySizeDragSortableView,
+} from 'react-native-drag-sort';
 
 const data = [
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
+  {title: 'item 1'},
+  {title: 'item 2'},
+  {title: 'item 3'},
+  {title: 'item 4'},
   {title: 'item 1'},
   {title: 'item 2'},
   {title: 'item 3'},
@@ -36,11 +84,8 @@ export default class DragItem extends Component {
   render() {
     return (
       <SafeAreaView style={{backgroundColor: '#fff', flex: 1}}>
-        <ScrollView
-          ref={scrollView => (this.scrollView = scrollView)}
-          scrollEnabled={this.state.scrollEnabled}
-          style={styles.container}>
-          <DragSortableView
+        <View style={styles.container}>
+          <AutoDragSortableView
             dataSource={this.state.data}
             parentWidth={parentWidth}
             childrenWidth={childrenWidth}
@@ -69,7 +114,7 @@ export default class DragItem extends Component {
               return this.renderItem(item, index);
             }}
           />
-        </ScrollView>
+        </View>
       </SafeAreaView>
     );
   }
